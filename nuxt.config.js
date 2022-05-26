@@ -1,6 +1,10 @@
 // const jsonImporter = require('node-sass-json-importer');
 
 export default {
+  server: {
+     port: 3000,
+    // host: '127.0.0.1'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ahbs-websites',
@@ -20,6 +24,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // '@/assets/scss/var.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -53,5 +58,8 @@ export default {
     //   ctx.loaders.scss.sassOptions.importer = jsonImporter();
     //   console.log(ctx.loaders.sass.sassOptions);
     // }
-  }
+  },
+  // router: {
+  //   trailingSlash: false
+  // }
 }

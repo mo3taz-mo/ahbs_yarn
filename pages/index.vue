@@ -1,41 +1,14 @@
 <template>
   <div>
-    <!-- <videoApp :Video="Video"/> -->
     <video class="video-ctrl" controls autoplay="true" muted loop="loop" ref="video">
       <source :src="video">
     </video>
+    <carousel v-if="siteName == 'ABC' || siteName == 'AKW'"  />
     <offer />
   </div>
 </template>
 
-<script>
-import axios from 'axios';
-
-import Offer from '~/components/home/offer/offer.vue'
-// import videoApp from '~/components/shared/video-app/video-app.vue'
-export default {
-  name: 'IndexPage',
-  components: {
-    Offer
-    // videoApp
-  },
-  data(){
-    return {
-      siteName: '',
-      //video: ,
-      video: '',//this.siteName === 'WebSite1' ? 'https://www.w3schools.com/html/movie.mp4' : 'https://admin.andalusia-dentalcenters.com/storage/settings/November2020/2zamKjku9bAQTSLxdkLs.mov'
-
-    }
-  },
-  mounted() {
-    this.$axios.get('/config.json').then(res => {
-      debugger
-      this.siteName = res.data.SiteName;
-      this.video = (this.siteName === 'WebSite1') ? 'https://www.w3schools.com/html/movie.mp4' : 'https://admin.andalusia-dentalcenters.com/storage/settings/November2020/2zamKjku9bAQTSLxdkLs.mov'
-    });
-  }
-}
-</script>
+<script src="./index.js"></script>
 
 <style lang="scss" scoped>
 video.video-ctrl {

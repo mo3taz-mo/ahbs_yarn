@@ -42,11 +42,12 @@
 
 <script src="./header-app.js"></script>
 <style lang="scss" scoped>
-  @import "assets/scss/variable.scss";
+  @import "assets/styles/scss/variables/variable.scss";
+  //@import "static/config.json";
   $small: 768px;
   .zoom-active {
     background-color: rgb(132, 132, 132);
-    color: #fff !important;
+    color: $blackColor;
   }
   span {
     padding: 0px 8px;
@@ -66,14 +67,14 @@
     }
   }
   .hotline {
-    color: $mainColor;
+    color: $blackColor;
     font-weight: bold;
     font-size: 25px;
     @media screen and (max-width: $small) {
       font-size: 17px;
     }
     a {
-      color: $mainColor;
+      color: $blackColor;
       &:hover {
         opacity: 0.9;
       }
