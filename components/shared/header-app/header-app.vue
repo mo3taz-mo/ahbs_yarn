@@ -4,19 +4,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 d-none d-sm-block">
-          <NuxtLink to="/" class="hold-logo"
-            ><img src="~assets/images/logo.png" alt="logo"
-          /></NuxtLink>
+          <NuxtLink to="/" class="hold-logo">
+            <img v-if="siteName == 'ABC' && false" src="~assets/images/logo.png" alt="logo" />
+            <img v-if="siteName == 'AKW'" src="~assets/images/logo1.png" alt="logo" />
+            <img v-if="siteName == 'ADC'" src="~assets/images/logo2.png" alt="logo" />
+          </NuxtLink>
         </div>
         <div class="col-md-2 div3"></div>
-        <div class="col-lg-7 col-12 mt-1">
+        <div class="col-lg-7 col-12 mt-1" v-if="siteName == 'ABC'">
           <div class="right my-1">
             <span class="dark" role="button">
               <i class="fas fa-sun"></i> Dark Mode</span
             >
             <span class="hotline" role="button"
               ><a href="#"
-                ><i class="fas fa-phone-alt"></i>
+                >
                 <i class="fas fa-phone"></i>
                 HotLine
               </a></span

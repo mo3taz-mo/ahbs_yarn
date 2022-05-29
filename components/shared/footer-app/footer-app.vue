@@ -1,7 +1,6 @@
 <template>
   <div>
     <footer>
-      <div style="color: #fff;">Footer</div>
     </footer>
     <div class="footer-bottom">
       <div class="container">
@@ -39,9 +38,6 @@
 <style lang="scss" scoped>
 $small: 768px;
 footer {
-  /*background: rgb(36, 68, 23);*/
-  /*background: linear-gradient(0deg, rgba(36, 68, 23, 1) 0%, rgba(65, 124, 32, 1) 100%);*/
-  /*height: 400px;*/
   position: relative;
   overflow: hidden;
   padding-top: 3rem;

@@ -3,7 +3,7 @@ if(process.client) {
   if(JSON.parse(localStorage.getItem('siteName')) == "AKW") {
     import('~/assets/styles/css/variables/akw.css');
   } else if (JSON.parse(localStorage.getItem('siteName')) == "ABC") {
-    import('~/assets/styles/css/variables/adc.css');
+    import('~/assets/styles/css/variables/abc.css');
   } else if (JSON.parse(localStorage.getItem('siteName')) == "ADC") {
     import('~/assets/styles/css/variables/adc.css');
   } else {
@@ -34,28 +34,35 @@ export default {
     }
   },
   methods: {
+    setData() {
+      this.$axios.get('/config.json').then(res => {
+        localStorage.setItem('siteName', JSON.stringify(res.data.SiteName));
+        localStorage.setItem('siteVideo', JSON.stringify(res.data.SiteVideo));
+        localStorage.setItem('siteApi', JSON.stringify(res.data.SiteAPI));
+        localStorage.setItem('allSites', JSON.stringify(res.data.AllSites));
+        localStorage.setItem('siteLang', JSON.stringify(res.data.SiteLang));
+      });
+    },
     checkLinks() {
-      debugger
       let sites = JSON.parse(localStorage.getItem('allSites'));
-
-      for (let i = 0; i < sites.length; i++) {
-        if(window.location.host == sites[i].baseURL) {
-          document.getElementById(sites[i].name).classList.add("group-active-link");
-        } else {
-          document.getElementById(sites[i].name).classList.remove("group-active-link");
+      if(sites == undefined || sites == '') {
+        ''
+      } else {
+        for (let i = 0; i < sites.length; i++) {
+          if(window.location.host == sites[i].baseURL) {
+            document.getElementById(sites[i].name).classList.add("group-active-link");
+          } else {
+            document.getElementById(sites[i].name).classList.remove("group-active-link");
+          }
         }
       }
+
     }
+  },
+  created() {
+    this.setData();
   },
   mounted() {
     this.checkLinks();
-    this.$axios.get('/config.json').then(res => {
-      localStorage.setItem('siteName', JSON.stringify(res.data.SiteName));
-      localStorage.setItem('siteVideo', JSON.stringify(res.data.SiteVideo));
-      localStorage.setItem('siteApi', JSON.stringify(res.data.SiteAPI));
-      localStorage.setItem('allSites', JSON.stringify(res.data.AllSites));
-      localStorage.setItem('siteLang', JSON.stringify(res.data.SiteLang));
-
-    });
   },
 }

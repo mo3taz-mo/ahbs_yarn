@@ -3,13 +3,13 @@
     <div class="container">
       <b-navbar toggleable="lg" type="dark" class="p-0">
         <b-collapse id="nav-collapse" is-nav>
-          <span style="padding-right: 30px;" v-if="siteName == 'AKW' || siteName == 'ABC'">{{siteName}}</span>
           <b-navbar-nav>
               <a class="nav-item" v-for="(site, index) in allSites"
               :id="site.name"
               :key="index"
               :href="`http://${site.baseURL}`" target="_parent"><span>{{site.name}}</span></a>
           </b-navbar-nav>
+          <a v-if="false" href="#">{{$t('welcome')}}</a>
         </b-collapse>
       </b-navbar>
     </div>
@@ -42,7 +42,7 @@ export default {
   }
 }
 .nav-item {
-  padding-right: 25px;
+  padding: 0 10px;
 }
 .navbar-nav {
   .group-active-link {

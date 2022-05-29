@@ -1,7 +1,7 @@
 {
   "SiteName": "ABC",
   "SiteVideo": "https://admin.andalusia-dentalcenters.com/storage/settings/November2020/2zamKjku9bAQTSLxdkLs.mov",
-  "SiteAPI": "https://jsonplaceholder.typicode.com/photos",
+  "SiteAPI": "https://jsonplaceholder.typicode.com/posts",
   "AllSites": [
     {
       "name": "ABC",

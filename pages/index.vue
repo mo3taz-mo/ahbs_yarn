@@ -1,10 +1,10 @@
 <template>
   <div>
-    <video class="video-ctrl" controls autoplay="true" muted loop="loop" ref="video">
+    <video v-if="siteName == 'ABC' || siteName == 'ADC'"   class="video-ctrl" controls autoplay="true" muted loop="loop" ref="video">
       <source :src="video">
     </video>
-    <carousel v-if="siteName == 'ABC' || siteName == 'AKW'"  />
-    <offer />
+    <carousel v-if="siteName == 'ADC' || siteName == 'AKW'"  />
+    <offer  v-if="siteName == 'ABC' || siteName == 'AKW'" />
   </div>
 </template>
 

@@ -3,6 +3,7 @@ export default {
   name: "nav-menu",
   data() {
     return {
+      siteName: (process.client) ?  JSON.parse(localStorage.getItem('siteName')): '',
     };
   },
 };
